@@ -1,26 +1,17 @@
-<html lang="ja">
-	<head>
-		<title></title>
-	</head>
-	<body>
+<?php get_header(); ?>
 
-		<!-- Blog Title -->
-		<?php bloginfo('name'); ?>
-
-		<!-- Blog description -->
-		<?php bloginfo('description'); ?>
+<div class="posts">
+	<!-- Articles -->
+	<?php if(have_posts()): while(have_posts()): the_post(); ?>
 		
-		<!-- Articles -->
-		<?php if(have_posts()): while(have_posts()): the_post(); ?>
-			
-			<?php echo get_the_date(); ?> <!-- posted at -->
-			<?php the_category(','); ?>	<!-- category -->
-			<a href="<?php the_permalink(); ?>">
-				<?php the_title(); ?>	<!-- title of article -->
-			</a>
-			<?php the_content('Read'); ?> <!-- show hidden article -->
+		<?php echo get_the_date(); ?> <!-- posted at -->
+		<?php the_category(','); ?>	<!-- category -->
+		<a href="<?php the_permalink(); ?>">
+			<?php the_title(); ?>	<!-- title of article -->
+		</a>
+		<?php the_content('Read'); ?> <!-- show hidden article -->
 
-		<?php endwhile; endif; ?>
+	<?php endwhile; endif; ?>
+</div>
 
-	</body>
-</html>
+<?php get_footer(); ?>

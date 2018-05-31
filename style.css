@@ -4,3 +4,11 @@ Author: LifeUp
 Author URL: http://lifeuptokyo.com
 Description: theme for lifeup
 */
+
+* {
+}
+
+.header {
+	background: rgba(200,211,255,0.5);
+	color: blue;
+}
